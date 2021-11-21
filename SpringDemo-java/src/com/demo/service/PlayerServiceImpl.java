@@ -7,16 +7,16 @@ import java.util.List;
 
 public class PlayerServiceImpl implements PlayerService{
 
-    private PlayerRepository playerrepository ;
+    private PlayerRepository playerRepository ;
 
     @Override
     public List<Player> getPlayerName() {
 
-        return playerrepository.findAll();
+        return playerRepository.findAll();
     }
 
     public void setPlayerRepository(PlayerRepository playerRepository){
 
-        this.playerrepository = playerRepository;
+        this.playerRepository = playerRepository;
     }
 }

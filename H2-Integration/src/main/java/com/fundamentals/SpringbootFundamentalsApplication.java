@@ -10,7 +10,7 @@ import com.fundamentals.entity.PlayerEntity;
 @SpringBootApplication
 public class SpringbootFundamentalsApplication {
 
-	private static Object PlayerRepository;
+	private static Object playerRepository;
 
 	public static void main(String[] args) {
 
@@ -20,14 +20,14 @@ public class SpringbootFundamentalsApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(PlayerRepository playerReposiroty){
+	public CommandLineRunner demo(PlayerRepository playerRepository){
 		return (args)->{
-			playerReposiroty.save(new PlayerEntity("SachinTendulkar", "Cricket"));
-			playerReposiroty.save(new PlayerEntity("RogerFederer", "Tennis"));
-			playerReposiroty.save(new PlayerEntity("ChristianoRonaldo", "Soccer"));
-			playerReposiroty.save(new PlayerEntity("ValentinoRossi", "MotoGP"));
+			playerRepository.save(new PlayerEntity("SachinTendulkar", "Cricket"));
+			playerRepository.save(new PlayerEntity("RogerFederer", "Tennis"));
+			playerRepository.save(new PlayerEntity("ChristianoRonaldo", "Soccer"));
+			playerRepository.save(new PlayerEntity("ValentinoRossi", "MotoGP"));
 
-			for(PlayerEntity entity : playerReposiroty.findAll()){
+			for(PlayerEntity entity : playerRepository.findAll()){
 				System.out.println("The player is | "+ entity.toString());
 			}
 		};

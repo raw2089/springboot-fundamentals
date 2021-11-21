@@ -24,6 +24,7 @@ public class ApplicationConfig {
 
     @Bean(name = "playerRepository")
     public PlayerRepository getPlayerRespository(){
+
         return new PlayerRepositoryImpl();
     }
 }
